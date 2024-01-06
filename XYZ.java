@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+// Main class XYZ
+public class XYZ {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Accept employee information
+        System.out.println("Enter Employee Information:");
+        System.out.print("Employee ID: ");
+        int empId = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Employee Name: ");
+        String empName = scanner.nextLine();
+        System.out.print("Employee Salary: ₹");
+        double empSalary = scanner.nextDouble();
+
+        // Create Employee object and calculate income tax
+        Employee employee = new Employee(empId, empName, empSalary);
+        employee.calcTax();
+
+        // Accept product information
+        System.out.println("\nEnter Product Information:");
+        System.out.print("Product ID: ");
+        int productId = scanner.nextInt();
+        System.out.print("Product Price: ₹");
+        double productPrice = scanner.nextDouble();
+        System.out.print("Product Quantity: ");
+        int productQuantity = scanner.nextInt();
+
+        // Create Product object and calculate sales tax
+        Product product = new Product(productId, productPrice, productQuantity);
+        product.calcTax();
+
+        scanner.close();
+    }
+}
